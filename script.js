@@ -1,10 +1,10 @@
-// Firebase config (তোমার আসল Config বসানো হয়েছে)
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCe8eKTgo8Y3J9NJ-liUuTRYHBbA5O-2LM",
   authDomain: "jumpgameproject-da942.firebaseapp.com",
   databaseURL: "https://jumpgameproject-da942-default-rtdb.firebaseio.com",
   projectId: "jumpgameproject-da942",
-  storageBucket: "jumpgameproject-da942.appspot.com", // ঠিক করা হয়েছে
+  storageBucket: "jumpgameproject-da942.appspot.com",
   messagingSenderId: "967008799896",
   appId: "1:967008799896:web:63b08775fde066f00f94ed",
   measurementId: "G-1SL1TFD4M4"
@@ -68,7 +68,6 @@ db.ref("scores").orderByChild("score").limitToLast(10).on("value", snapshot => {
   snapshot.forEach(child => {
     scores.push(child.val());
   });
-  // Highest থেকে Lowest দেখানোর জন্য reverse
   scores.reverse().forEach(data => {
     board.innerHTML += data.name + " : " + data.score + "<br>";
   });
